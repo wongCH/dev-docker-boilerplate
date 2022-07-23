@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  dev:
+    build:
+      #context: .
+      dockerfile: startup/Dockerfile
+    env_file:
+      - startup/dev.env
+    restart: always
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/app
+      - $HOME/.aws/credentials:/home/app/.aws/credentials:ro
+    working_dir: /app/startup
+    entrypoint: 
+     - /app/startup/init.sh
