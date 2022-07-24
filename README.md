@@ -10,7 +10,7 @@ To start, we always setup the folder structure this way:
 .
 ├── startup
 │   ├── Dockerfile # build your docker image to install the assemblies / runtime for your application
-│   ├── init.sh # start up script to run when u create a new container
+│   ├── init.sh # start up script to run when want to configure the container (e.g. setup environment variables, add cloud service provider access key)
 │   └── dev.env # this is the environment file for environment variables
 │   
 ├── app # your application folder, you can name it anything you want.
