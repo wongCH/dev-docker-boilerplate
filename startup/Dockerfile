@@ -5,15 +5,14 @@ RUN apt-get update && apt-get install -y curl gnupg software-properties-common w
 ARG TF=1.3.6
 WORKDIR /app
 
-RUN wget "https://releases.hashicorp.com/terraform/${TF}/terraform_${TF}_linux_arm64.zip" -O terraform.zip
-RUN unzip terraform.zip
-RUN rm terraform.zip
+
+RUN curl "https://releases.hashicorp.com/terraform/${TF}/terraform_${TF}_linux_arm64.zip" -o terraform.zip  
+RUN unzip terraform.zip 
 RUN mv terraform /usr/local/bin
- 
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
-# RUN ./aws/install
+ 
 
 RUN curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 RUN mv /tmp/eksctl /usr/local/bin
