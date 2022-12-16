@@ -10,8 +10,10 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./:/app
-      - $HOME/.aws/credentials:/home/app/.aws/credentials:ro
-    working_dir: /app/startup
-    entrypoint: 
-     - /app/startup/init.sh
+      - ../:/app
+      - ../terraform-on-aws-eks:/tf-eks
+      - $HOME/.aws/credentials:/root/.aws/credentials:ro
+      - $HOME/.aws/config:/root/.aws/config:ro
+    working_dir: /tf-eks
+   # entrypoint: 
+   #  - dev/app/startup/init.sh
