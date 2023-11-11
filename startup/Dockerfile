@@ -2,7 +2,7 @@
 FROM debian:stable as build
 
 RUN apt-get update && apt-get install -y curl gnupg software-properties-common wget unzip git 
-ARG TF=1.3.6
+ARG TF=1.6.4
 WORKDIR /app
 
 
