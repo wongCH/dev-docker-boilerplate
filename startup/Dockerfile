@@ -2,8 +2,7 @@
 FROM debian:stable as build
 
 RUN apt-get update && apt-get install -y curl gnupg software-properties-common wget unzip git 
-ARG TF=1.6.4
-WORKDIR /app
+ARG TF=1.6.3
 
 
 RUN curl "https://releases.hashicorp.com/terraform/${TF}/terraform_${TF}_linux_arm64.zip" -o terraform.zip  
