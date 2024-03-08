@@ -11,7 +11,7 @@ services:
     tty: true
     volumes:
       - ../:/app
-      - ../terraform-on-aws-eks:/tf-eks
+      - ../app:/tf-eks
       - $HOME/.aws/credentials:/root/.aws/credentials:ro
       - $HOME/.aws/config:/root/.aws/config:ro
     working_dir: /tf-eks
