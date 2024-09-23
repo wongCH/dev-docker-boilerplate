@@ -12,8 +12,5 @@ services:
     volumes:
       - ../:/app
       - ../app:/tf-eks
-      - $HOME/.aws/credentials:/root/.aws/credentials:ro
-      - $HOME/.aws/config:/root/.aws/config:ro
+      - $HOME/.aws:/root/.aws
     working_dir: /tf-eks
-   # entrypoint: 
-   #  - dev/app/startup/init.sh
